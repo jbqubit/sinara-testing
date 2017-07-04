@@ -28,25 +28,33 @@ class SAWGTest(EnvExperiment):
         delay(300*us)
         self.sawg0.reset()
         self.sawg1.reset()
+        self.ttl_sma.output()
         delay(10 * ms)
         self.test()
 
     @kernel
     def test(self):
-        f0 = 2*MHz
+        f0 = 20*MHz
         t0 = 1*us
         a0 = 0.5
+        aclip = 0.1
 
-        # starting condition
-        self.sawg0.amplitude1.set(2*a0)
-        self.sawg0.frequency1.set(f0)
-        self.sawg1.amplitude1.set(a0)
-        self.sawg1.frequency1.set(f0)
-        self.sawg1.offset.set(a0)
-
-
-        # set clipping amplitude
-        self.sawg1.config.set_out_max(0.5)
-        self.sawg1.config.set_out_min(-0.5)
+        while True:
+            # starting condition
+            self.sawg0.amplitude1.set(2*a0)
+            self.sawg0.frequency1.set(f0)
+            self.sawg1.amplitude1.set(a0)
+            self.sawg1.frequency1.set(f0)
+            self.sawg1.offset.set(a0)
 
 
+            set clipping amplitude
+            self.sawg1.config.set_out_max(aclip)
+            delay(1*us)
+            self.sawg1.config.set_out_min(-aclip)
+
+            self.ttl_sma.pulse(1 * us)
+            delay(10 * us)
+
+            #end
+            delay(1*ms)
