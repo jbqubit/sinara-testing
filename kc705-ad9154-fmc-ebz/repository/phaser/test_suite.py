@@ -49,6 +49,16 @@ def main():
     # test cancellation of sawg0.frequency0 and sawg0.frequency1
     my_artiq_run("test_ap20")
 
+    # measure response of AD9154-FMC-EBZ to step stimulus
+    my_artiq_run('test_time_constant')
+
+    # test saturation junctions
+    for s in ['0', '1', '01']:
+        test_name = "test_sat{:s}".format(s)
+        my_artiq_run(test_name)
+
+    # check sign of sawg1.offset
+    my_artiq_run('test_offset')
 
 
 if __name__ == "__main__":
