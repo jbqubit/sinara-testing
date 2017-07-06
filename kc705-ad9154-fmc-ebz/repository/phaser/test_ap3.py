@@ -16,39 +16,17 @@ class SAWGTest(EnvExperiment):
     @kernel
     def run(self):
         self.core.reset()
+        delay(300 * us)
+        self.sawg0.reset()
+        self.sawg1.reset()
         self.ttl_sma.output()
-        delay(3*ms)
-        self.sawg_reset()
+        delay(300 * us)
 
         for ph in range(0, 100):
             for i in range(0, 100):
                 self.test(ph/100.0)
                 self.ttl_sma.pulse(3 * us)
                 delay(1 * ms)
-
-    @kernel
-    def sawg_reset(self):
-        self.sawg0.frequency0.set(0.0)
-        self.sawg0.frequency0.set(0.0)
-        self.sawg0.phase0.set(0.0)
-        self.sawg0.amplitude1.set(0.0)
-        self.sawg0.frequency1.set(0.0)
-        self.sawg0.phase1.set(0.0)
-        self.sawg0.amplitude2.set(0.0)
-        self.sawg0.frequency2.set(0.0)
-        self.sawg0.phase2.set(0.0)
-        self.sawg0.config.set_clr(1, 1, 1)
-
-        self.sawg1.frequency0.set(0.0)
-        self.sawg1.frequency0.set(0.0)
-        self.sawg1.phase0.set(0.0)
-        self.sawg1.amplitude1.set(0.0)
-        self.sawg1.frequency1.set(0.0)
-        self.sawg1.phase1.set(0.0)
-        self.sawg1.amplitude2.set(0.0)
-        self.sawg1.frequency2.set(0.0)
-        self.sawg1.phase2.set(0.0)
-        self.sawg1.config.set_clr(1, 1, 1)
 
     @kernel
     def test(self, ph):
