@@ -37,6 +37,7 @@ def main():
         my_artiq_run(s)
 
     # test absolute phase
+    # ap3 sweeps phase of sawg1 in a loop
     for n in [0, 1, 2, 3, 4]:
         s = "test_ap0{:d}".format(n)
         my_artiq_run(s)

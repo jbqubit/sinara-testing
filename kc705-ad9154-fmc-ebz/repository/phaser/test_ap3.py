@@ -22,7 +22,7 @@ class SAWGTest(EnvExperiment):
         self.ttl_sma.output()
         delay(300 * us)
 
-        for ph in range(0, 100):
+        for ph in range(0, 300):
             for i in range(0, 100):
                 self.test(ph/100.0)
                 self.ttl_sma.pulse(3 * us)
@@ -31,9 +31,9 @@ class SAWGTest(EnvExperiment):
     @kernel
     def test(self, ph):
         # test: t1
-        f0 = 1*MHz
-        t = 1*us
-        a0 = 0.78
+        f0 = 10*MHz
+        t = 500*ns
+        a0 = 1.
 
         # prepare
         self.sawg0.frequency1.set(f0)
