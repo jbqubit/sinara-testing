@@ -34,7 +34,7 @@ class SAWGTest(EnvExperiment):
             self.sawg1.offset.set(0.0)
             delay(1*us)
             # expect: positive polarity pulse
-            # observe: negative polarity pulse
+            # observe: positive polarity pulse
             self.sawg1.offset.set(1.0)
             delay(100*ns)
             self.sawg1.offset.set(0.0)
