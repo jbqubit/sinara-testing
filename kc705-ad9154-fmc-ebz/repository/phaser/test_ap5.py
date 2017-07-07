@@ -1,6 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
+    """test_ap5"""
     def build(self):
         self.setattr_device("core")
         self.setattr_device("led")

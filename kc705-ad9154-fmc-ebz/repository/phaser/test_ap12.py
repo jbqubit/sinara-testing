@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_ap12
     purpose: test continuous phase mode
     test: sawg0.frequency1 is reference tone; advance phase of sawg1.frequency2
     setup: scope trigger on ttl_sma; 500ns/div, 100mV/div

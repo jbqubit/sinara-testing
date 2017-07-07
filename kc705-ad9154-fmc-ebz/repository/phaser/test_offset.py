@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_offset
     purpose: check sign of sawg1.offset
     expectation: see inline comments below
     """

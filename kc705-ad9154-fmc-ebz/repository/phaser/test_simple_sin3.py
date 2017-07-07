@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_simple_sin3
     purpose: test sinusoidal output
     expectation:
       - 10 MHz from sawg.frequency2 on sawg0 and sawg1

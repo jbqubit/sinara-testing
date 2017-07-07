@@ -1,8 +1,7 @@
 from artiq.experiment import *
 
-''' Demo of how to synchronize. '''
-
 class SAWGTest(EnvExperiment):
+    """test_freqs3"""
     def build(self):
         print(self.__doc__)
         self.setattr_device("core")

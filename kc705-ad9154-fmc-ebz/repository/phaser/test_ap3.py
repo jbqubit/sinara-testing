@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_ap3
     sawg0 is a reference channel
     sawg1 has its phase swept in a loop
     """
@@ -33,7 +33,7 @@ class SAWGTest(EnvExperiment):
         # test: t1
         f0 = 10*MHz
         t = 500*ns
-        a0 = 1.
+        a0 = 0.80
 
         # prepare
         self.sawg0.frequency1.set(f0)

@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_freqs02
     purpose: test phase coherence of frequency jumps
     test:  sawg0.frequency0 is reference tone
            sawg1.frequency2 is tone that jumps

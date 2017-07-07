@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_ap20
     purpose: test cancellation of sawg0.frequency0 and sawg0.frequency1
     setup: trigger scope on ttl_sma
     expectation: sawg0 amplitude is zero

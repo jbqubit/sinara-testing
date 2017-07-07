@@ -1,6 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
+    """"test_freqs2"""
     def build(self):
         print(self.__doc__)
         self.setattr_device("core")

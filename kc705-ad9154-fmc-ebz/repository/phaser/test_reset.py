@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_reset
     purpose: test sawg.reset()
     expectation:
       waveform stops after program termination

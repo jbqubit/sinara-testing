@@ -1,8 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
-
+    """test_upconvert3
     purpose: test amplitude dependence of two-tone up-conversion
     expectation:
         Since mixing is all digital spectral content should not vary with amplitude. That is,

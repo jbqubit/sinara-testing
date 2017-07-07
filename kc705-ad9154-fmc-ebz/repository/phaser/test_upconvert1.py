@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_upconvert1
     purpose: test single-tone up conversion
     test: mix LO = 150 MHz, IF = 25 MHz
     expectation:

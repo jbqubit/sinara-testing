@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_time_constant
     purpose: measure response of AD9154-FMC-EBZ to step stimulus
     test: step sawg1.offset
     setup: scope trigger on ttl_sma; 200ns/div, 100mV/div

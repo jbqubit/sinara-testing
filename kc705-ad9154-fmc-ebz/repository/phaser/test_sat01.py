@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_sat01
     purpose: test saturation of summing junction involving offset (just before DAC output)
     test: sawg0 is reference tone; clamp amplitude of sawg1
     setup: scope run control single, manual trigger; 500ns/div, 100mV/div

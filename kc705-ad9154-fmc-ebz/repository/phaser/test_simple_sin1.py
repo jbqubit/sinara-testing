@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_simple_sin1
     purpose: test sinusoidal output
     expectation:
       - 10 MHz from sawg.frequency1 on sawg0 and sawg1
@@ -23,6 +23,7 @@ class SAWGTest(EnvExperiment):
         self.sawg0.reset()
         self.sawg1.reset()
         self.ttl_sma.output()
+        delay(300 * us)
 
         f0 = 10*MHz
         a0 = 0.5

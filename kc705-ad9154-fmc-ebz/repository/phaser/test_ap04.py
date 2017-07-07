@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 class SAWGTest(EnvExperiment):
-    """
+    """test_ap04
     purpose: test absolute alignment of sawg0.frequency1 and sawg1.frequency2
     test: make sawg0 and sawg1 phase aligned
     expectation: no phase offset between sawg0 and sawg1
