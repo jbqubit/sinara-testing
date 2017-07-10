@@ -23,3 +23,12 @@ files, flashed FPGA and ran ARTIQ programs on said hardware [1]
 - [] added support for new FPGA or protoboard to MiSoC (eg AFCK)
 
 [1] This is the level required to test the VHDCI Carrier using ARTIQ.
+
+Examples of ARTIQ extensions.
+
+Add a new instance of an existing PHY to a lab setup
+- add SPI to KC705 (https://github.com/m-labs/artiq/pull/776)
+
+IC configuration using firmware
+- AD9616 and AD9154 initialization moved from gateware to firmware (https://github.com/mntng/artiq/commit/7ff77bceacd1b8649a24789b066c24b91b40f5db)
+- firmware: add si5324 programming functions (https://github.com/m-labs/artiq/commit/13c45c876603fc4486d2c9fac9a963c0ce5a2922)
