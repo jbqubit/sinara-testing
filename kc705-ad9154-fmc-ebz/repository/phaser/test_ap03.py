@@ -5,7 +5,7 @@ class SAWGTest(EnvExperiment):
     purpose: test absolute alignment of sawg0.frequency0 and sawg1.frequency1
     test: make sawg0 and sawg1 phase aligned
     expectation: no phase offset between sawg0 and sawg1
-    observation: delay between rising edges -- FAIL
+    observation: delay between rising edges -- FAIL but accepted see Issue #772
     setup: scope single run, manually trigger acquisition; 10ns/div, 100mV/div
     """
     def build(self):
