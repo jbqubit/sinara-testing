@@ -39,8 +39,10 @@ class SAWGTest(EnvExperiment):
         while True:
             self.sawg0.amplitude1.set(a0)
             self.sawg0.frequency1.set(f0)
+            self.sawg0.phase1.set(0.)
             self.sawg1.amplitude1.set(a0)
             self.sawg1.frequency1.set(f0)
+            self.sawg1.phase1.set(0.)
             self.sawg1.config.set_out_max(asat)
             delay(1*us)
             self.sawg1.config.set_out_min(-1*asat)

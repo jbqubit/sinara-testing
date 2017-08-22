@@ -26,7 +26,7 @@ class SAWGTest(EnvExperiment):
         self.ttl_sma.output()
         delay(5*ms)
 
-        f0 = 20*MHz
+        f0 = 10*MHz
         tt = 1000*ns
 
         while True:
@@ -38,32 +38,40 @@ class SAWGTest(EnvExperiment):
             self.sawg1.phase1.set(0.5)
 
             # 0th order
-            # self.sawg0.amplitude1.set_coeff([1., 0., 0., 0.])
-            # self.sawg1.amplitude1.smooth(0., 1., 1 * ns, 0)  # implicit delay(1*ns)
-            # delay(tt/5)
+            self.sawg0.amplitude1.set_coeff([1., 0., 0., 0.])
+            self.sawg1.amplitude1.smooth(0., 1., 1*ns, 0)  # implicit delay(1*ns)
+            delay(tt/5)
 
-            # # 1st order
-            # self.sawg0.amplitude1.set_coeff([0., 1/tt, 0., 0.])
-            # self.sawg1.amplitude1.smooth(0., 1., tt, 1)  # implicit delay(tt)
-            # self.sawg0.amplitude1.set_coeff([1., 0., 0., 0.])
-            # delay(tt)
-            # self.sawg0.amplitude1.set_coeff([1., -1/tt, 0., 0.])
-            # self.sawg1.amplitude1.smooth(1., 0., tt, 1)  # implicit delay(tt)
-            # self.sawg0.amplitude1.set_coeff([0., 0., 0., 0.])
+            # 1st order
+            self.sawg0.amplitude1.set_coeff([0., 1/tt, 0., 0.])
+            self.sawg1.amplitude1.smooth(0., 1., tt, 1)  # implicit delay(tt)
+            self.sawg1.amplitude1.set_coeff([1., 0., 0., 0.])
+            self.sawg0.amplitude1.set_coeff([1., 0., 0., 0.])
+            delay(tt)
+            self.sawg0.amplitude1.set_coeff([1., -1/tt, 0., 0.])
+            self.sawg1.amplitude1.smooth(1., 0., tt, 1)  # implicit delay(tt)
+            self.sawg1.amplitude1.set_coeff([0., 0., 0., 0.])
+            self.sawg0.amplitude1.set_coeff([0., 0., 0., 0.])
 
             # 2nd order
-            # self.sawg0.amplitude1.set_coeff([0., 0., 2/(tt*tt), 0.])
-            # delay(tt)
+            self.sawg0.amplitude1.set_coeff([0., 0., 2/(tt*tt), 0.])
+            self.sawg0.amplitude1.set_coeff([1., 0., 0., 0.])
+            delay(tt)
+            self.sawg0.amplitude1.set_coeff([1., 0., -2/(tt*tt), 0.])
+            self.sawg0.amplitude1.set_coeff([0., 0., 0., 0.])
 
             # 3rd order
-            self.sawg0.amplitude1.set_coeff([0., 0., 0., 6/(tt*tt*tt)]) # 1 after 1e-6
-            self.sawg1.amplitude1.smooth(0., 1., tt, 3)
-            self.sawg0.amplitude1.set_coeff([1., 0., 0., 0.])  # 1 after 1e-6
+            self.sawg0.amplitude1.set_coeff([0., 0., 0., 6/(tt*tt*tt)])
+            self.sawg1.amplitude1.smooth(0., 1., tt, 3)  # implicit delay(tt)
+            self.sawg1.amplitude1.set_coeff([1., 0., 0., 0.])
+            self.sawg0.amplitude1.set_coeff([1., 0., 0., 0.])
             delay(tt)
+            self.sawg0.amplitude1.set_coeff([1., 0., 0., -6/(tt*tt*tt)])
+            self.sawg1.amplitude1.smooth(1., 0., tt, 3)  # implicit delay(tt)
+            self.sawg1.amplitude1.set_coeff([0., 0., 0., 0.])
+            self.sawg0.amplitude1.set_coeff([0., 0., 0., 0.])
 
             # wrap up
-            self.sawg0.amplitude1.set_coeff([0.])
-            self.sawg1.amplitude1.set_coeff([0.])
             delay(5*ms)
 
 
