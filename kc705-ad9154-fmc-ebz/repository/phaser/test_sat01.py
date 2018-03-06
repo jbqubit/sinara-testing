@@ -48,7 +48,7 @@ class SAWGTest(EnvExperiment):
             self.sawg1.offset.set(a0)
 
 
-            set clipping amplitude
+            # set clipping amplitude
             self.sawg1.config.set_out_max(aclip)
             delay(1*us)
             self.sawg1.config.set_out_min(-aclip)
