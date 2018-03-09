@@ -1,5 +1,14 @@
+From fe6d0b4c747adbc59c37deda0fe329139706f6ef Mon Sep 17 00:00:00 2001
+From: Joe Britton <britton@umd.edu>
+Date: Fri, 9 Mar 2018 12:14:15 -0500
+Subject: [PATCH] hmc830 patch
+
+---
+ artiq/firmware/libboard_artiq/hmc830_7043.rs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
 diff --git a/artiq/firmware/libboard_artiq/hmc830_7043.rs b/artiq/firmware/libboard_artiq/hmc830_7043.rs
-index ee456beb9..ca0a296b7 100644
+index 44bf0f9..a9fe589 100644
 --- a/artiq/firmware/libboard_artiq/hmc830_7043.rs
 +++ b/artiq/firmware/libboard_artiq/hmc830_7043.rs
 @@ -22,7 +22,7 @@ mod clock_mux {
@@ -11,11 +20,14 @@ index ee456beb9..ca0a296b7 100644
          }
      }
  }
-@@ -191,6 +191,6 @@ mod hmc7043 {
- 
+@@ -254,6 +254,6 @@ mod hmc7043 {
  pub fn init() -> Result<(), &'static str> {
      clock_mux::init();
+     /* must be the first SPI init because of HMC830 SPI mode selection */
 -    hmc830::init()?;
 +    //hmc830::init()?;
      hmc7043::init()
  }
+-- 
+2.7.4
+
