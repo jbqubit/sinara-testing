@@ -7,7 +7,9 @@
 
 
 # create artiq build environment for sayma
+# source build-artiq master
 
+pushd .
 source activate root
 conda env remove -n artiq-dev --yes --quiet
 rm -rf ~/artiq-dev
@@ -16,14 +18,15 @@ mkdir ~/artiq-dev
 cd ~/artiq-dev
 
 git clone --recursive http://github.com/m-labs/artiq
-
-
-conda env create -f artiq/conda/artiq-dev.yaml 
-source activate artiq-dev
 cd artiq 
-git apply  ~/github/jbqubit/sinara-testing/sayma/tools/bypass_hmc830.diff
+git checkout $1 
+
+conda env create -f conda/artiq-dev.yaml 
+source activate artiq-dev
+#git apply  ~/github/jbqubit/sinara-testing/sayma/tools/bypass_hmc830.diff
 pip install -e .
+conda install cython --yes --quiet 
+
 
 /usr/bin/time -o sayma_rtm.time python artiq/gateware/targets/sayma_rtm.py
-/usr/bin/time -o sayma_amc.time python artiq/gateware/targets/sayma_amc.py
-
+/usr/bin/time -o sayma_amc.time python artiq/gateware/targets/sayma_amc.py # --without-sawg
