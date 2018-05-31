@@ -41,37 +41,37 @@ device_db = {
         "type": "local",
         "module": "artiq.coredevice.ttl",
         "class": "TTLOut",
-        "arguments": {"channel": 0}  # AG9, SFP1_LED1
+        "arguments": {"channel": 0}
     },
-    "led123": {
+    "led1": {
         "type": "local",
         "module": "artiq.coredevice.ttl",
         "class": "TTLOut",
-        "arguments": {"channel": 1}  # AJ10, SFP1_LED2
+        "arguments": {"channel": 1}
     },
-    "led123": {
+    "led1": {
         "type": "local",
         "module": "artiq.coredevice.ttl",
         "class": "TTLOut",
-        "arguments": {"channel": 2}  # AJ13, SFP2_LED1
+        "arguments": {"channel": 2}
     },
-    "led123": {
+    "led1": {
         "type": "local",
         "module": "artiq.coredevice.ttl",
         "class": "TTLOut",
-        "arguments": {"channel": 3}  # AE13, SFP2_LED2
+        "arguments": {"channel": 3}
     },
-    "ttl_sma0": {
+    "ttl_sma_out": {
         "type": "local",
         "module": "artiq.coredevice.ttl",
         "class": "TTLOut",
-        "arguments": {"channel": 4}  # K23, SMA1
+        "arguments": {"channel": 4}
     },
-    "ttl_sma1": {
+    "ttl_sma_in": {
         "type": "local",
-        "module": "artiq.coredevice.ttl",  
+        "module": "artiq.coredevice.ttl",
         "class": "TTLOut",
-        "arguments": {"channel": 5}  # L25, SMA2
+        "arguments": {"channel": 5}
     },
 
     "sawg0": {
@@ -122,4 +122,6 @@ device_db = {
         "class": "SAWG",
         "arguments": {"channel_base": 76, "parallelism": 4}
     },
+    "led":"led0",
+    "ttl_sma": "ttl_sma_out"
 }
