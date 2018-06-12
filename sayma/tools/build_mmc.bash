@@ -10,6 +10,7 @@ cmake .. -DBOARD=sayma -DBOARD_RTM=sayma -DTARGET_CONTROLLER=LPC1776 -DCMAKE_BUI
 # for operation on bechtop
 #cmake .. -DBOARD=sayma -DBOARD_RTM=sayma -DTARGET_CONTROLLER=LPC1776 -DCMAKE_BUILD_TYPE=Release -DBENCH_TEST
 
+make clean
 make
 cd out
 objcopy -I binary openMMC.bin -O ihex openMMC.hex

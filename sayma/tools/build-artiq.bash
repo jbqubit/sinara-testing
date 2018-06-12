@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #conda config --prepend channels http://conda.anaconda.org/conda-forge/label/main
 #conda config --prepend channels http://conda.anaconda.org/m-labs/label/main
@@ -24,12 +25,10 @@ git checkout $1
 conda env create -f conda/artiq-dev.yaml 
 source activate artiq-dev
 #git apply  ~/github/jbqubit/sinara-testing/sayma/tools/bypass_hmc830.diff
-conda install --force --yes --quiet jesd204b=0.6
+#conda install --force --yes --quiet jesd204b=0.6
 conda install cython --yes --quiet 
 pip install -e .
 
 
 /usr/bin/time -o sayma_rtm.time python artiq/gateware/targets/sayma_rtm.py
-/usr/bin/time -o sayma_amc.time python artiq/gateware/targets/sayma_amc.py # --without-sawg
-
-# sdsf
+/usr/bin/time -o sayma_amc.time python artiq/gateware/targets/sayma_amc.py #--without-sawg
