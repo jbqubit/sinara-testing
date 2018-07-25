@@ -70,7 +70,7 @@ device_db = {
     "ttl_sma_in": {
         "type": "local",
         "module": "artiq.coredevice.ttl",
-        "class": "TTLOut",
+        "class": "TTLInOut",
         "arguments": {"channel": 5}
     },
 
@@ -123,5 +123,5 @@ device_db = {
         "arguments": {"channel_base": 76, "parallelism": 4}
     },
     "led":"led0",
-    "ttl_sma": "ttl_sma_out"
+    "ttl_sma": "ttl_sma_out",
 }

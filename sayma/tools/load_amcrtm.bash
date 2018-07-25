@@ -1,5 +1,8 @@
 #!/bin/bash
-#$ source tools/sayma_load_to_ram.bash ~/artiq-dev/artiq/artiq_sayma_20180305_AMConly
+
+#$ tools/sayma_load_to_ram.bash ~/artiq-dev/artiq/artiq_sayma_20180305_AMConly
+
+#source activate artiq-dev
 
 ARTIQ_BUILD_DIR="$1"
 FLASH_SCRIPT=~/github/jbqubit/sinara-testing/sayma/tools/sayma_flash.cfg

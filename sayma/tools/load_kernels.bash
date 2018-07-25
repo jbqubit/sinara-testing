@@ -1,10 +1,9 @@
 #!/bin/bash
-set -e
 
-# $ source activate artiq-dev
-# $ source tools/load_kernels.bash repository/misc/blink_led.py
+# $ tools/load_kernels.bash repository/misc/blink_led.py
 
 ARTIQ_PYTHON_SCRIPT="$1"
+
 
 #artiq_compile "$ARTIQ_PYTHON_SCRIPT" -o idle_kernel.elf
 artiq_compile "$ARTIQ_PYTHON_SCRIPT" -o startup_kernel.elf
