@@ -1,7 +1,7 @@
 # This is an example device database that needs to be adapted to your setup.
 # The list of devices here is not exhaustive.
 
-core_addr = "192.168.1.76"
+core_addr = "192.168.1.77"
 
 device_db = {
     "core": {
