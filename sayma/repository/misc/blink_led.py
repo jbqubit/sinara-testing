@@ -14,16 +14,16 @@ class BlinkSaymaLED(EnvExperiment):
     def run(self):
         self.core.reset()
         self.ttl_sma_out.output()
-        #self.ttl_sma1.output()
 
-        for i in range(100):
-            # self.led0.pulse(100*ms)
-            # self.led1.pulse(100*ms)
-
-            self.ttl_sma_out.pulse(i*us)
-            # ttl_sma1 is set as input in gateware/target/sayma_amc
-            # no output observed 
-            #self.ttl_sma_out.pulse(i*us)  
-            delay(1000*ms)
-            self.led0.pulse(1000*ms)
+        for i in range(20): 
+            div = 10.0
+            self.ttl_sma_out.pulse(1*us)
+            delay(1000/div*ms)
+            self.led0.pulse(1000/div*ms)
+            delay(500/div*ms)
+            self.led0.pulse(500/div*ms)
+            delay(250/div*ms)
+            self.led0.pulse(250/div*ms)
+            delay(125/div*ms)
+            self.led0.pulse(125/div*ms)
             print(i)

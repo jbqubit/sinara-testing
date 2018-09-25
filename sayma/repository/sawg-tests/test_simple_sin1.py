@@ -21,14 +21,16 @@ class SAWGTest(EnvExperiment):
         self.core.reset()
         delay(300 * us)
         self.sawg0.reset()
+        delay(100*ns)
         self.sawg1.reset()
         self.ttl_sma.output()
         delay(300 * us)
 
-        f0 = 10*MHz
+        f0 = 5*MHz
         a0 = 0.5
 
-        self.sawg0.frequency1.set(f0)
+        self.sawg0.frequency0.set(f0)
         self.sawg0.amplitude1.set(a0)
-        self.sawg1.frequency1.set(f0)
+        self.sawg1.frequency0.set(f0)
         self.sawg1.amplitude1.set(a0)
+

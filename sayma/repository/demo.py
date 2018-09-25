@@ -1,7 +1,7 @@
 from artiq.experiment import *
 
 
-class SAWGTest(EnvExperiment):
+class DemoPy(EnvExperiment):
     def build(self):
         self.setattr_device("core")
         self.setattr_device("ttl_sma_out")

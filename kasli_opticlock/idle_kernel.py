@@ -19,3 +19,5 @@ class IdleKernel(EnvExperiment):
             delay(125*ms)
             self.led0.pulse(125*ms)
             delay(250*ms)
+            self.led0.pulse(1000*ms)
+            delay(250*ms)
