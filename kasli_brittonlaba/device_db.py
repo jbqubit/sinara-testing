@@ -129,7 +129,7 @@ for i in range(4):
             "module": "artiq.coredevice.ad9910",
             "class": "AD9910",
             "arguments": {
-                "pll_n": 32,
+                "pll_n": 32,  # for 125 MHz clock
                 "chip_select": i + 4,
                 "cpld_device": "urukul0_cpld",
                 "sw_device": "ttl_urukul0_sw" + str(i)
