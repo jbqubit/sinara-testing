@@ -12,11 +12,11 @@ cd ~/artiq-dev
 
 git clone --recursive http://github.com/jbqubit/artiq
 cd artiq 
-git checkout $1 
+git checkout brittonlaba 
 
 conda env create -f conda/artiq-dev.yaml 
 source activate artiq-dev
-conda install cython --yes --quiet 
+conda install cython migen=0.7 --yes --quiet 
 pip install -e .
 
 /usr/bin/time -o kasli_brittonlaba.time python artiq/gateware/targets/kasli.py --variant brittonlaba
